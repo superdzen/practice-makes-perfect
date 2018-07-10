@@ -25,6 +25,7 @@
         <module>collections</module>
         <module>simple-network-chat</module>
         <module>spring-demo-one</module>
+        <module>servlets-jsp</module>
     </modules>
 
     <dependencies>
