@@ -29,6 +29,7 @@
         <module>patterns</module>
         <module>hacker-rank</module>
         <module>concurrency</module>
+        <module>java-core-others</module>
     </modules>
 
     <dependencies>

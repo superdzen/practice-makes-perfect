@@ -58,7 +58,11 @@ class Student {
 
 class Priorities {
     public List<Student> getStudents(List<String> events) {
-        PriorityQueue<Student> studentPriorityQueue = new PriorityQueue(Comparator.comparing(Student::getCgpa).reversed().thenComparing(Student::getName).thenComparing(Student::getId));
+        PriorityQueue<Student> studentPriorityQueue = new PriorityQueue(Comparator
+                .comparing(Student::getCgpa)
+                .reversed()
+                .thenComparing(Student::getName)
+                .thenComparing(Student::getId));
         List<Student> students = new ArrayList<>();
         for (String e : events) {
             Scanner in = new Scanner(e);

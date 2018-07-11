@@ -1,7 +1,5 @@
 package com.superdzen.synchronize;
 
-import static org.junit.Assert.assertEquals;
-
 public class SynchronizedMethods {
     private int sum = 0;
     private static int staticSum = 0;
