@@ -28,6 +28,7 @@
         <module>servlets-jsp</module>
         <module>patterns</module>
         <module>hacker-rank</module>
+        <module>concurrency</module>
     </modules>
 
     <dependencies>
