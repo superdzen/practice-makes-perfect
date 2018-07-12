@@ -29,6 +29,7 @@
         <module>hacker-rank</module>
         <module>concurrency</module>
         <module>java-core-others</module>
+        <module>servlets-jsp</module>
 
     </modules>
 
