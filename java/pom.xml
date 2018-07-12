@@ -25,11 +25,11 @@
         <module>collections</module>
         <module>simple-network-chat</module>
         <module>spring-demo-one</module>
-        <module>servlets-jsp</module>
         <module>patterns</module>
         <module>hacker-rank</module>
         <module>concurrency</module>
         <module>java-core-others</module>
+
     </modules>
 
     <dependencies>
