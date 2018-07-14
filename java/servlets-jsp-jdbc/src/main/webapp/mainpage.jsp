@@ -1,9 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>superdzen.com</title>
+    <title>SuperDzen</title>
 </head>
 <body>
-<h1>Hello Servlet</h1>
+<%@include file="my-header.html" %>
+
+<div align="center">Welcome to SuperDzen home page<br/></div>
+
+<jsp:include page="my-footer.jsp"/>
+
 </body>
 </html>
