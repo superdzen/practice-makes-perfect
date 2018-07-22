@@ -13,8 +13,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-@WebServlet("/TestServlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/JdbcTestServlet")
+public class JdbcTestServlet extends HttpServlet {
 
     // Define datasource/connection pool for Resource Injection
     @Resource(name = "jdbc/web_student_tracker")

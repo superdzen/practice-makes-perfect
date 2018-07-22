@@ -1,4 +1,4 @@
-package com.superdzen.servlets;
+package com.superdzen.mvcone;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
