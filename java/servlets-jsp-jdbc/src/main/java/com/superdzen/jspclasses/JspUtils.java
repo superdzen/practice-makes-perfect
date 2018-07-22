@@ -1,4 +1,4 @@
-package com.superdzen.jsp;
+package com.superdzen.jspclasses;
 
 public class JspUtils {
 

@@ -1,4 +1,4 @@
-package com.superdzen.jsp.tagdemo;
+package com.superdzen.jspclasses.tagdemo;
 
 public class Student {
     private String firstName;
