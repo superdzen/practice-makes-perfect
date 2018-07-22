@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.*,com.superdzen.jsp.tagdemo.Student" %>
+<%@ page import="java.util.*,com.superdzen.jspclasses.tagdemo.Student" %>
 <%
     List<Student> data = new ArrayList<>();
 
