@@ -1,10 +1,7 @@
 package com.superdzen.mvcjdbc;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +66,128 @@ public class StudentDbUtil {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void insertStudent(Student newStudent) {
+
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+
+        try {
+            myConn = dataSource.getConnection();
+
+            String sql = "INSERT INTO student "
+                    + "(first_name, last_name, email) "
+                    + "VALUES (?,?,?)";
+
+            myStmt = myConn.prepareStatement(sql);
+
+            myStmt.setString(1, newStudent.getFirstName());
+            myStmt.setString(2, newStudent.getLastName());
+            myStmt.setString(3, newStudent.getEmail());
+
+            myStmt.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close(null, myStmt, myConn);
+        }
+    }
+
+    public Student getStudent(String theStudentId) throws Exception {
+        Student theStudent = null;
+
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+        ResultSet myRs = null;
+        int studentId;
+
+        try {
+            // convert student id to int
+            studentId = Integer.parseInt(theStudentId);
+
+            // get connection to database
+            myConn = dataSource.getConnection();
+
+            // create sql to get selected student
+            String sql = "select * from student where id=?";
+
+            // create prepared statement
+            myStmt = myConn.prepareStatement(sql);
+
+            // set params
+            myStmt.setInt(1, studentId);
+
+            // execute statement
+            myRs = myStmt.executeQuery();
+
+            // retrieve data from result set row
+            if (myRs.next()) {
+                String firstName = myRs.getString("first_name");
+                String lastName = myRs.getString("last_name");
+                String email = myRs.getString("email");
+
+                // use the studentId during construction
+                theStudent = new Student(studentId, firstName, lastName, email);
+            } else {
+                throw new Exception("Could not find student id: " + studentId);
+            }
+
+            return theStudent;
+        } finally {
+            // clean up JDBC objects
+            close(myRs, myStmt, myConn);
+        }
+
+    }
+
+    public void updateStudent(Student theStudent) throws Exception {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+
+        try {
+            // get a db connection
+            myConn = dataSource.getConnection();
+
+            // create SQL update statement
+            String sql = "UPDATE student SET first_name = ?, last_name= ?, email = ? WHERE id=?";
+            myStmt = myConn.prepareStatement(sql);
+
+            // prepare statement
+            myStmt.setString(1, theStudent.getFirstName());
+            myStmt.setString(2, theStudent.getLastName());
+            myStmt.setString(3, theStudent.getEmail());
+            myStmt.setInt(4, theStudent.getId());
+
+            // execute SQL statement
+            myStmt.execute();
+        } catch (SQLException exp) {
+            exp.printStackTrace();
+        } finally {
+            close(null, myStmt, myConn);
+        }
+    }
+
+    public void deleteStudent(String theStudentId) {
+        Connection myConn = null;
+        PreparedStatement myStmt = null;
+
+        try {
+            // get a db connection
+            myConn = dataSource.getConnection();
+
+            // create SQL update statement
+            String sql = "DELETE FROM student WHERE id=?";
+            myStmt = myConn.prepareStatement(sql);
+            myStmt.setInt(1, Integer.parseInt(theStudentId));
+
+            // execute SQL statement
+            myStmt.execute();
+        } catch (SQLException exp) {
+            exp.printStackTrace();
+        } finally {
+            close(null, myStmt, myConn);
         }
     }
 }
