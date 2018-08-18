@@ -1,6 +1,6 @@
 package com.superdzen.springdemo;
 
-public class TrackCoach implements Coach {
+public class  TrackCoach implements Coach {
 
     // define a private field for the dependency
     private FortuneService fortuneService;

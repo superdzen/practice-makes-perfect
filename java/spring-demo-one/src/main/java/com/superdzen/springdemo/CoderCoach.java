@@ -12,7 +12,7 @@ public class CoderCoach implements Coach {
 
     @Override
     public String getDailyWorkout() {
-        return "Get a course on udemy.com";
+        return "I am your CoderCoach. Get a course on udemy.com!";
     }
 
     @Override
