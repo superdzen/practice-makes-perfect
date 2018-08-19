@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TennisCoach implements Coach {
+public class ConstructorAutoWiredTennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
     @Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    public ConstructorAutoWiredTennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
