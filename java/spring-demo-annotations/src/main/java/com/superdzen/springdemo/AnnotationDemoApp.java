@@ -12,6 +12,7 @@ public class AnnotationDemoApp {
         // get beans from Spring container
         Coach theCoach1 = context.getBean("constructorAutoWiredTennisCoach", Coach.class);
         Coach theCoach2 = context.getBean("setterAutoWiredTennisCoach", Coach.class);
+        Coach theCoach3 = context.getBean("fieldAutoWiredTennisCoach", Coach.class);
         Coach thePingPongCoach = context.getBean("pingPongCoach", Coach.class);
 
         // call a method on the beans
@@ -20,6 +21,9 @@ public class AnnotationDemoApp {
 
         System.out.println("Tennis coach2: " + theCoach2.getDailyWorkout());
         System.out.println("Tennis coach2: " + theCoach2.getDailyFortune());
+
+        System.out.println("Tennis coach3: " + theCoach3.getDailyWorkout());
+        System.out.println("Tennis coach3: " + theCoach3.getDailyFortune());
 
         System.out.println("Ping-Pong coach: " + thePingPongCoach.getDailyWorkout());
 
