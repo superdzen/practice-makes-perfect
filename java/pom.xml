@@ -30,6 +30,7 @@
         <module>concurrency</module>
         <module>java-core-others</module>
         <module>servlets-jsp-jdbc</module>
+        <module>spring-demo-annotations</module>
 
     </modules>
 
