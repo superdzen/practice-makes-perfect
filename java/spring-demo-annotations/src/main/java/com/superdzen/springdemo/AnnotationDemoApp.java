@@ -13,6 +13,7 @@ public class AnnotationDemoApp {
         Coach theCoach1 = context.getBean("constructorAutoWiredTennisCoach", Coach.class);
         Coach theCoach2 = context.getBean("setterAutoWiredTennisCoach", Coach.class);
         Coach theCoach3 = context.getBean("fieldAutoWiredTennisCoach", Coach.class);
+        PropertiesInjectionTennisCoach theCoach4 = context.getBean("propertiesInjectionTennisCoach", PropertiesInjectionTennisCoach.class);
         Coach thePingPongCoach = context.getBean("pingPongCoach", Coach.class);
 
         // call a method on the beans
@@ -24,6 +25,10 @@ public class AnnotationDemoApp {
 
         System.out.println("Tennis coach3: " + theCoach3.getDailyWorkout());
         System.out.println("Tennis coach3: " + theCoach3.getDailyFortune());
+
+
+        System.out.println("Tennis coach4 team: " + theCoach4.getEmail());
+        System.out.println("Tennis coach4 team: " + theCoach4.getTeam());
 
         System.out.println("Ping-Pong coach: " + thePingPongCoach.getDailyWorkout());
 
