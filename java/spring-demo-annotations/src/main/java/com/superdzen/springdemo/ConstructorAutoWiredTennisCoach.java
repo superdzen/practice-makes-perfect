@@ -1,6 +1,7 @@
 package com.superdzen.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,7 +10,8 @@ public class ConstructorAutoWiredTennisCoach implements Coach {
     private FortuneService fortuneService;
 
     @Autowired
-    public ConstructorAutoWiredTennisCoach(FortuneService fortuneService) {
+    public ConstructorAutoWiredTennisCoach(@Qualifier("happyFortuneService") FortuneService fortuneService) {
+        System.out.println(">> ConstructorAutoWiredTennisCoach: inside the constructor");
         this.fortuneService = fortuneService;
     }
 

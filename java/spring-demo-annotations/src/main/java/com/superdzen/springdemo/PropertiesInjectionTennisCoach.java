@@ -2,17 +2,24 @@ package com.superdzen.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FieldAutoWiredTennisCoach implements Coach {
+public class PropertiesInjectionTennisCoach implements Coach {
+
+    @Value("${foo.email}")
+    private String email;
+
+    @Value("${foo.team}")
+    private String team;
 
     @Autowired
     @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
-    public FieldAutoWiredTennisCoach() {
-        System.out.println(">> FieldAutoWiredTennisCoach: inside default constructor");
+    public PropertiesInjectionTennisCoach() {
+        System.out.println(">> PropertiesInjectionTennisCoach: inside default constructor");
     }
 
     @Override
@@ -23,5 +30,13 @@ public class FieldAutoWiredTennisCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTeam() {
+        return team;
     }
 }
