@@ -2,6 +2,7 @@ package com.superdzen.springdemo;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class FileFortuneService implements FortuneService {
         File theFile = new File(fileName);
 
         theFortunes = new ArrayList<>();
-        System.out.println("Reading file " + fileName);
+       // System.out.println("Reading file " + fileName);
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(theFile))) {
             String tmpLine;
@@ -38,5 +39,21 @@ public class FileFortuneService implements FortuneService {
     public String getFortune() {
         int ix = myRandom.nextInt(theFortunes.size());
         return theFortunes.get(ix);
+    }
+
+    @PostConstruct
+    private void testPostConstructAnnotation() {
+        File file = new File(fileName);
+        String tmpString;
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            System.out.print(">> Reading file in @PostConstruct method: ");
+            while ((tmpString = bufferedReader.readLine()) != null) {
+                System.out.print(tmpString + ", ");
+            }
+            System.out.println();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
