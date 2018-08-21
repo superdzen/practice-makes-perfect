@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class FieldAutoWiredTennisCoach implements Coach {
 
     @Autowired
@@ -26,4 +28,17 @@ public class FieldAutoWiredTennisCoach implements Coach {
     public String getDailyFortune() {
         return fortuneService.getFortune();
     }
+
+    // init method
+    @PostConstruct
+    public void doStartupStuff() {
+        System.out.println(">> FieldAutoWiredTennisCoach is doing init method");
+    }
+
+    // destroy method
+    @PreDestroy
+    public void doCleanupStuff() {
+        System.out.println(">> FieldAutoWiredTennisCoach is doing destroy method");
+    }
+
 }
