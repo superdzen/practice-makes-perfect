@@ -31,6 +31,7 @@
         <module>java-core-others</module>
         <module>servlets-jsp-jdbc</module>
         <module>spring-demo-annotations</module>
+        <module>spring-mvc-demo</module>
 
     </modules>
 
