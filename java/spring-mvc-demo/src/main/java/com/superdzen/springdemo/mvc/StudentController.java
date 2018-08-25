@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Map;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/student")
@@ -14,6 +15,10 @@ public class StudentController {
 
     @Value("#{countryOptions}")
     private Map<String, String> countryOptions;
+
+    @Value("#{favouriteLanguage}")
+    private Map<String, String> favouriteLanguage;
+
 
     @RequestMapping("/showForm")
     public String showStudentForm(Model model) {
@@ -25,6 +30,9 @@ public class StudentController {
         model.addAttribute("student", student);
 
         model.addAttribute("theCountryOptions", countryOptions);
+
+        model.addAttribute("favouriteLanguage", favouriteLanguage);
+
         return "student-form";
     }
 

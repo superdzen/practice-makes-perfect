@@ -27,5 +27,5 @@
     </bean>
 
     <util:properties id="countryOptions" location="WEB-INF/countries.properties"/>
-
+    <util:properties id="favouriteLanguage" location="WEB-INF/favouriteLanguage.properties"/>
 </beans>
