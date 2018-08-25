@@ -36,7 +36,9 @@ public class HelloWorldController {
     public String processFormVersionThree(
             @RequestParam("studentName") String name,
             Model model) {
+
         model.addAttribute("msg", name.toUpperCase());
+
         return "helloworld";
     }
 }
