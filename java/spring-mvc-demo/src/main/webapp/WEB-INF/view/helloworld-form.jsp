@@ -6,14 +6,13 @@
 <body>
 
 Process form using request.getParameter
-<form action="/processFormVTwo" method="get">
+<form action="/hello/processFormVTwo" method="get">
     <input type="text" placeholder="Enter your name" name="studentName"/>
     <input type="submit">
 </form>
 
-
 Process form using @RequestParam
-<form action="/processFormVThree" method="get">
+<form action="/hello/processFormVThree" method="get">
     <input type="text" placeholder="Enter your name" name="studentName"/>
     <input type="submit">
 </form>
