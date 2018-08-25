@@ -12,7 +12,7 @@
     Last Name: <form:input path="lastName"/>
     <br/>
     <form:select path="country">
-        <form:options items="${student.countryOptions}"/>
+        <form:options items="${theCountryOptions.values()}"/>
     </form:select>
     <br/>
     <input type="submit" value="Submit"/>
