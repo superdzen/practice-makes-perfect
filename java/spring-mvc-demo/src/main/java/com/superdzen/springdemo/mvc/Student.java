@@ -1,11 +1,22 @@
 package com.superdzen.springdemo.mvc;
 
+import java.util.List;
+
 public class Student {
 
     private String firstName;
     private String lastName;
     private String country;
     private String favouriteLanguage;
+    private List<String> operatingSystems;
+
+    public List<String> getOperatingSystems() {
+        return operatingSystems;
+    }
+
+    public void setOperatingSystems(List<String> operatingSystems) {
+        this.operatingSystems = operatingSystems;
+    }
 
     public String getFavouriteLanguage() {
         return favouriteLanguage;

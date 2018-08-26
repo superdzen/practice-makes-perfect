@@ -16,10 +16,6 @@ public class StudentController {
     @Value("#{countryOptions}")
     private Map<String, String> countryOptions;
 
-    @Value("#{favouriteLanguage}")
-    private Map<String, String> favouriteLanguage;
-
-
     @RequestMapping("/showForm")
     public String showStudentForm(Model model) {
 
@@ -31,8 +27,6 @@ public class StudentController {
 
         model.addAttribute("theCountryOptions", countryOptions);
 
-        model.addAttribute("favouriteLanguage", favouriteLanguage);
-
         return "student-form";
     }
 
@@ -41,7 +35,8 @@ public class StudentController {
         System.out.println("The student: "
                 + student.getFirstName()
                 + " " + student.getLastName()
-                + " " + student.getCountry());
+                + " " + student.getCountry()
+                + " " + student.getOperatingSystems().toString());
         return "student-confirmation";
     }
 }
