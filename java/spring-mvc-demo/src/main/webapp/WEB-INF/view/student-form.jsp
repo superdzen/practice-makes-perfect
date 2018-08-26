@@ -24,6 +24,13 @@
     C# <form:radiobutton path="favouriteLanguage" value="C#"/>
     Go <form:radiobutton path="favouriteLanguage" value="Go"/>
     <br/>
+    <br/>
+    Have experience with operation systems:
+    <br/>
+    Windows <form:checkbox path="operatingSystems" value="Windows"/>
+    Linux <form:checkbox path="operatingSystems" value="Linux"/>
+    Mac OS <form:checkbox path="operatingSystems" value="Mac OS"/>
+
     <input type="submit" value="Submit"/>
 </form:form>
 
