@@ -1,5 +1,7 @@
 package com.superdzen.springdemo.mvc;
 
+import com.superdzen.springdemo.mvc.validation.CourseCode;
+
 import javax.validation.constraints.*;
 
 public class Customer {
@@ -15,9 +17,20 @@ public class Customer {
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
     private String postalCode;
 
+    @CourseCode
+    private String courseCode;
+
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
     private String lastName;
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
 
     public String getFirstName() {
         return firstName;

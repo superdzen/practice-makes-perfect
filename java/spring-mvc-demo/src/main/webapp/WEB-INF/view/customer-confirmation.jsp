@@ -11,5 +11,6 @@ First Name = ${customer.firstName} <br/>
 Last Name = ${customer.lastName} <br/>
 Free passes = ${customer.freePasses}<br/>
 Postal code = ${customer.postalCode}<br/>
+Course code = ${customer.courseCode}<br/>
 </body>
 </html>
