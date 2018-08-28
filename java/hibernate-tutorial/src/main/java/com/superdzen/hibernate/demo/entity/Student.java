@@ -1,9 +1,6 @@
 package com.superdzen.hibernate.demo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
@@ -13,6 +10,7 @@ public class Student {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -25,7 +23,7 @@ public class Student {
     @Column(name = "email")
     private String email;
 
-    public Student( String firstName, String lastName, String email) {
+    public Student(String firstName, String lastName, String email) {
 
         this.firstName = firstName;
         this.lastName = lastName;
