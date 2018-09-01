@@ -1,4 +1,4 @@
-package com.superdzen.hibernate.demo.entity;
+package com.superdzen.hibernate.demo.entity.student;
 
 import javax.persistence.*;
 

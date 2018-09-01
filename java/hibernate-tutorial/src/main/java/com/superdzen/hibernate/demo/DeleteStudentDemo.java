@@ -1,7 +1,7 @@
 package com.superdzen.hibernate.demo;
 
 
-import com.superdzen.hibernate.demo.entity.Student;
+import com.superdzen.hibernate.demo.entity.student.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
