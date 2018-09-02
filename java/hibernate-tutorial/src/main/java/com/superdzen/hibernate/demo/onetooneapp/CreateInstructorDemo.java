@@ -1,4 +1,4 @@
-package com.superdzen.hibernate.demo;
+package com.superdzen.hibernate.demo.onetooneapp;
 
 import com.superdzen.hibernate.demo.entity.onetoone.Instructor;
 import com.superdzen.hibernate.demo.entity.onetoone.InstructorDetail;
@@ -17,7 +17,7 @@ public class CreateInstructorDemo {
                 .buildSessionFactory();
 
 
-        Session sesstion = sessionFactory.getCurrentSession();
+        Session session = sessionFactory.getCurrentSession();
 
         try {
             Instructor tempInstructor =
@@ -28,12 +28,12 @@ public class CreateInstructorDemo {
 
             tempInstructor.setInstructorDetail(tempInstructorDetail);
 
-            sesstion.beginTransaction();
+            session.beginTransaction();
 
             System.out.println("\nSaving instructor: " + tempInstructor);
-            sesstion.save(tempInstructor);
+            session.save(tempInstructor);
 
-            sesstion.getTransaction().commit();
+            session.getTransaction().commit();
         } finally {
             sessionFactory.close();
         }

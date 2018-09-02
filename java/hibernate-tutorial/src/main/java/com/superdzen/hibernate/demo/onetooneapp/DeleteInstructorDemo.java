@@ -1,4 +1,4 @@
-package com.superdzen.hibernate.demo;
+package com.superdzen.hibernate.demo.onetooneapp;
 
 import com.superdzen.hibernate.demo.entity.onetoone.Instructor;
 import com.superdzen.hibernate.demo.entity.onetoone.InstructorDetail;
@@ -24,7 +24,7 @@ public class DeleteInstructorDemo {
             session.beginTransaction();
 
             // get instructor by PK
-            int id = 1;
+            int id = 3;
 
             Instructor tmpInstructor = session.get(Instructor.class, id);
 

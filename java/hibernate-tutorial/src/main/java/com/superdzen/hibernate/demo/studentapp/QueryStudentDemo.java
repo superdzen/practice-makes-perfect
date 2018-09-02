@@ -1,4 +1,4 @@
-package com.superdzen.hibernate.demo;
+package com.superdzen.hibernate.demo.studentapp;
 
 
 import com.superdzen.hibernate.demo.entity.student.Student;

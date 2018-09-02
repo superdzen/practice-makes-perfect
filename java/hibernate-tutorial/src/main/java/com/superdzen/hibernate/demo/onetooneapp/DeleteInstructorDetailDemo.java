@@ -1,4 +1,4 @@
-package com.superdzen.hibernate.demo;
+package com.superdzen.hibernate.demo.onetooneapp;
 
 import com.superdzen.hibernate.demo.entity.onetoone.Instructor;
 import com.superdzen.hibernate.demo.entity.onetoone.InstructorDetail;
@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 
-public class GetInstructorDetailDemo {
+public class DeleteInstructorDetailDemo {
 
     public static void main(String[] args) {
         SessionFactory sessionFactory = new Configuration()
@@ -22,15 +22,20 @@ public class GetInstructorDetailDemo {
         try {
             session.beginTransaction();
 
-            int id = 23;
+            int id = 4;
 
             InstructorDetail tmpInstructorDetail =
                     session.get(InstructorDetail.class, id);
 
-           // if (tmpInstructorDetail != null) {
-                System.out.println("tmpInstructorDetail: " + tmpInstructorDetail);
-                System.out.println("tmpInstrcutor: " + tmpInstructorDetail.getInstructor());
-           // }
+            System.out.println("tmpInstructorDetail: " + tmpInstructorDetail);
+            System.out.println("tmpInstructor: " + tmpInstructorDetail.getInstructor());
+            System.out.println("Deleting tmpInstructorDetail");
+
+            // remove the associated object reference
+            // break bi-directional link
+            tmpInstructorDetail.getInstructor().setInstructorDetail(null);
+
+            session.delete(tmpInstructorDetail);
 
             session.getTransaction().commit();
         } catch (Exception ex) {
@@ -40,6 +45,5 @@ public class GetInstructorDetailDemo {
             sessionFactory.close();
         }
     }
-
 
 }

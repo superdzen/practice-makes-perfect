@@ -1,4 +1,4 @@
-package com.superdzen.hibernate.demo;
+package com.superdzen.hibernate.demo.studentapp;
 
 
 import com.superdzen.hibernate.demo.entity.student.Student;
@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
-public class UpdateStudentDemo {
+public class DeleteStudentDemo {
     public static void main(String[] args) {
 
         // create session factory
@@ -21,7 +21,7 @@ public class UpdateStudentDemo {
         Session session = factory.getCurrentSession();
 
         try {
-            int studentID = 1;
+            int studentID = 7;
 
             // start a transaction
             session.beginTransaction();
@@ -29,23 +29,16 @@ public class UpdateStudentDemo {
             System.out.println("Getting student with ID=" + studentID);
             Student student = session.get(Student.class, studentID);
 
-            System.out.println("Updating student with ID=" + studentID);
-            student.setFirstName("Vasya");
+            System.out.println("Deleting student with ID=" + studentID);
+            session.delete(student);
+
+            studentID = 2;
+            System.out.println("Deleting student with ID=" + studentID);
+            session.createQuery("delete from Student where id=" + studentID)
+                    .executeUpdate();
 
             // commit transaction
             session.getTransaction().commit();
-
-
-            // another updating
-            session = factory.getCurrentSession();
-            session.beginTransaction();
-
-            System.out.println("\nUpdate email for all students:");
-            session.createQuery("update Student set email='foo@gmail.com'")
-                    .executeUpdate();
-
-            session.getTransaction().commit();
-
 
         } finally {
             factory.close();
