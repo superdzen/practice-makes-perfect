@@ -1,8 +1,6 @@
 package com.superdzen.hibernate.demo.entity.onetomany;
 
 
-import com.superdzen.hibernate.demo.entity.onetomany.InstructorDetail;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

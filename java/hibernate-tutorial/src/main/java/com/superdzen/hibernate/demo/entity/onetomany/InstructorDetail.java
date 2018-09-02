@@ -1,7 +1,5 @@
 package com.superdzen.hibernate.demo.entity.onetomany;
 
-import com.superdzen.hibernate.demo.entity.onetomany.Instructor;
-
 import javax.persistence.*;
 
 @Entity
