@@ -33,6 +33,7 @@
         <module>spring-demo-annotations</module>
         <module>spring-mvc-demo</module>
         <module>hibernate-tutorial</module>
+        <module>web-customer-tracker</module>
 
     </modules>
 
