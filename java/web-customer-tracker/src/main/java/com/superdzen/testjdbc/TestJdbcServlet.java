@@ -23,13 +23,13 @@ public class TestJdbcServlet extends HttpServlet {
         try {
             PrintWriter printWriter = resp.getWriter();
 
-            printWriter.println("Connection to " + jdbcUrl);
+            printWriter.print("Connection to " + jdbcUrl);
 
             Class.forName(driver);
 
             Connection myConn = DriverManager.getConnection(jdbcUrl, user, password);
 
-            printWriter.println("... Success!");
+            printWriter.println(" ... Success!");
 
             myConn.close();
 
