@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
@@ -15,6 +15,11 @@
 
     <div id="container">
         <div id="content">
+
+            <input type="button" value="Add Customer"
+                   onclick="window.location.href='showFormForAdd'; return false;"
+                   class="add-button"
+            />
 
             <table>
                 <tr>
