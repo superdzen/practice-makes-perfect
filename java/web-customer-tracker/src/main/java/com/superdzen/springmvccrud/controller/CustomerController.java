@@ -40,6 +40,14 @@ public class CustomerController {
         return "customer-form";
     }
 
+    @GetMapping("/deleteCustomer")
+    public String deleteCustomer(@RequestParam("customerId") int id) {
+
+        customerService.deleteCustomer(id);
+
+        return "redirect:/customer/list";
+    }
+
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("customer") Customer customer) {
         // save the customer using our service
@@ -50,13 +58,13 @@ public class CustomerController {
     }
 
     @GetMapping("/showFormForUpdate")
-    public String showFormForUpdate(@RequestParam("customerId") int Id, Model model){
+    public String showFormForUpdate(@RequestParam("customerId") int Id, Model model) {
 
         // get the customer form the DB
         Customer customer = customerService.getCustomer(Id);
 
         // set customer as a model attribute to repopulate the form
-        model.addAttribute("customer",customer);
+        model.addAttribute("customer", customer);
 
         // send data to form
         return "customer-form";
