@@ -70,4 +70,14 @@ public class CustomerController {
         return "customer-form";
     }
 
+    @PostMapping("/search")
+    public String searchCustomers(@RequestParam("theSearchName") String searchName, Model model) {
+
+        List<Customer> customers = customerService.searchCustomers(searchName);
+
+        model.addAttribute("customers", customers);
+
+        return "list-customers";
+    }
+
 }
