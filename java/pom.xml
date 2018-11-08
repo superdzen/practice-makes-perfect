@@ -34,6 +34,7 @@
         <module>spring-mvc-demo</module>
         <module>hibernate-tutorial</module>
         <module>web-customer-tracker</module>
+        <module>spring-aop-demo</module>
 
     </modules>
 
