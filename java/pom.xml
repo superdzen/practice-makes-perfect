@@ -35,6 +35,7 @@
         <module>hibernate-tutorial</module>
         <module>web-customer-tracker</module>
         <module>spring-aop-demo</module>
+        <module>jackson-databind-demo</module>
 
     </modules>
 
