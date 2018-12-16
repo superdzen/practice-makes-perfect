@@ -36,6 +36,7 @@
         <module>web-customer-tracker</module>
         <module>spring-aop-demo</module>
         <module>jackson-databind-demo</module>
+        <module>spring-rest-demo</module>
 
     </modules>
 
