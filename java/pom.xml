@@ -38,6 +38,8 @@
         <module>jackson-databind-demo</module>
         <module>spring-rest-demo</module>
         <module>junits</module>
+        <module>interview-preparation-kit</module>
+        <module>spring-boot-demo-reactive</module>
 
     </modules>
 
