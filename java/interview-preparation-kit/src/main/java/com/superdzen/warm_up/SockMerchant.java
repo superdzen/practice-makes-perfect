@@ -7,6 +7,9 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * https://www.hackerrank.com/challenges/sock-merchant
+ */
 public class SockMerchant {
 
     // Complete the sockMerchant function below.
