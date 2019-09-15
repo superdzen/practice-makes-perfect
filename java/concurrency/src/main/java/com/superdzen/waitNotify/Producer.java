@@ -1,6 +1,7 @@
 package com.superdzen.waitNotify;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Producer generates an integer value and add it to the queue
@@ -8,6 +9,7 @@ import java.util.List;
 public class Producer implements Runnable {
     private final List<Integer> taskQueue;
     private final int MAX_CAPACITY;
+    private static AtomicInteger counter = new AtomicInteger(0);
 
     public Producer(List<Integer> taskQueue, int max_capacity) {
         this.taskQueue = taskQueue;
@@ -16,10 +18,9 @@ public class Producer implements Runnable {
 
     @Override
     public void run() {
-        int counter = 0;
         while (true) {
             try {
-                produce(counter++);
+                produce(counter.getAndIncrement());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
